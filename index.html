@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Quadratic Formula Solver</title>
+  <link rel="stylesheet" href="css/normalize.css" charset="utf-8">
+  <link rel="stylesheet" href="css/common.css" charset="utf-8">
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+    crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      CommonHTML: { matchFontHeight: false }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  <script src="js/main.js"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+  <script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+  <script src="js/test.js"></script>
+</head>
+<body>
+  <h1>Quadratic Formula Solver</h1>
+  <form id="eqn">
+    <input type="text" id="eqn_a" class="" value="" placeholder="a" />
+    <span>\(x^2 + \)</span>
+    <input type="text" id="eqn_b" class="" value="" placeholder="b" />
+    <span>\(x + \)</span>
+    <input type="text" id="eqn_c" class="" value="" placeholder="c" />
+    <span>\( = 0\)</span>
+    <input type="submit" id="eqn_solve" class="" value="Solve" />
+  </form>
+  <div id="result">\[{}\]</div>
+
+  <!-- <hr>
+
+  <div id="formula">
+    \[
+      x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    \]
+  </div> -->
+
+  <div id="qunit"></div>
+</body>
+</html>
