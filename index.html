@@ -46,6 +46,10 @@
     \]
   </div> -->
 
-  <div id="qunit"></div>
+  <script type="text/javascript">
+    if (location.hostname === "") {
+      document.write('<div id="qunit"></div>');
+    }
+  </script>
 </body>
 </html>
