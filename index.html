@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Quadratic Formula Solver</title>
+  <title>二次方程式の解計算ツール</title>
   <link rel="stylesheet" href="css/normalize.css" charset="utf-8">
   <link rel="stylesheet" href="css/common.css" charset="utf-8">
   <script
@@ -26,25 +26,86 @@
   <script src="js/test.js"></script>
 </head>
 <body>
-  <h1>Quadratic Formula Solver</h1>
-  <form id="eqn">
-    <input type="text" id="eqn_a" class="" value="" placeholder="a" />
-    <span>\(x^2 + \)</span>
-    <input type="text" id="eqn_b" class="" value="" placeholder="b" />
-    <span>\(x + \)</span>
-    <input type="text" id="eqn_c" class="" value="" placeholder="c" />
-    <span>\( = 0\)</span>
-    <input type="submit" id="eqn_solve" class="" value="Solve" />
-  </form>
-  <div id="result">\[{}\]</div>
-
-  <!-- <hr>
-
-  <div id="formula">
-    \[
-      x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-    \]
-  </div> -->
+  <div class="margin5">
+    <h1>二次方程式の解計算ツール</h1>
+    <form id="eqn">
+      <input type="text" id="eqn_a" class="eqn-input" value="" placeholder="a" />
+      <span>\(x^2 + \)</span>
+      <input type="text" id="eqn_b" class="eqn-input" value="" placeholder="b" />
+      <span>\(x + \)</span>
+      <input type="text" id="eqn_c" class="eqn-input" value="" placeholder="c" />
+      <span>\( = 0\)</span>
+      <input type="submit" id="eqn_solve" class="" value="計算" />
+    </form>
+    <div id="result">\[{}\]</div>
+  </div>
+  <hr>
+  <div class="margin10">
+    <h2>よくある質問</h2>
+    <div class="QA">
+      <h4>(1) どうやって使うのですか。</h4>
+      <p>
+        フォームに数字を入力して「計算」ボタンを押すか「Enterキー」を押すと、二次方程式の解を求めます。
+      </p>
+      <p>
+        例えば、\(a = 2, b = 3, c = -4\) を入力すると、
+        \(
+          x = \frac{-3 \pm \sqrt{41}}{4}
+        \)
+        という解が得られます。
+      </p>
+    </div>
+    <div class="QA">
+      <h4>(2) 虚数解は計算できますか。</h4>
+      <p>
+        はい。虚数解も計算できます。
+      </p>
+    </div>
+    <div class="QA">
+      <h4>(2) 係数に少数を入れた場合でも計算できますか。</h4>
+      <p>
+        はい。誤差が含まれる可能性がありますが、正しく計算されます。
+      </p>
+    </div>
+    <div class="QA">
+      <h4>(3) \(a = 0\) や \(a = b = 0\) のときはどうなりますか。</h4>
+      <p>
+        \(a = 0\) のときは、一次方程式として計算します。
+        \(a = b = 0\) のときは、\(x = \mathrm{N/A}\)（Not Available）と表示します。
+      </p>
+    </div>
+    <div class="QA">
+      <h4>(4) 二次方程式の解って何ですか。</h4>
+      <p>
+        二次方程式には二つ解が存在します。
+        また、二つの解を求めるための公式（下の式）を二次方程式の解の公式と呼びます。
+        \[
+          x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        \]
+      </p>
+    </div>
+    <div class="QA">
+      <h4>(5) バグを見つけました。どこに報告すればいいですか。</h4>
+      <p>
+        <a href="https://twitter.com/tex2e">@tex2e</a>にリプライをください。
+        送るときは「二次方程式の解計算ツールのバグ報告」という単語も含めてください。
+        褒めてもらえると、すごく喜びます。
+      </p>
+      <p>
+        また、このプログラムは
+        <a href="https://github.com/tex2e/quadratic-formula">Github</a>
+        に上げているので、勇気のある方は Pull Request とかしてください。大歓迎です。
+      </p>
+    </div>
+    <div class="QA">
+      <h4></h4>
+      <p></p>
+    </div>
+    <div class="QA">
+      <h4></h4>
+      <p></p>
+    </div>
+  </div>
 
   <script type="text/javascript">
     if (location.hostname === "") {
