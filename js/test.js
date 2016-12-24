@@ -25,4 +25,13 @@ if (location.hostname === "") {
     assert.equal(solveQuadraticFormula(1, 0, 16), "\\pm 4 i");
     assert.equal(solveQuadraticFormula(4, -4, 5), "\\frac{1 \\pm 2 i}{2}");
   });
+
+  QUnit.test("a = 0", function (assert) {
+    assert.equal(solveQuadraticFormula(0, -1, 2), "2");
+    assert.equal(solveQuadraticFormula(0, 2, 1), "-\\frac{1}{2}");
+  });
+
+  QUnit.test("a = b = 0", function (assert) {
+    assert.equal(solveQuadraticFormula(0, 0, 5), "\\mathrm{N/A}")
+  })
 }

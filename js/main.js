@@ -10,6 +10,7 @@ $(function () {
       if (a === "") a = 1;
       if (b === "") b = 1;
       if (c === "") c = 0;
+      a = +a, b = +b, c = +c;
       var resultMath = solveQuadraticFormula(a, b, c);
       console.log(resultMath);
 
@@ -34,6 +35,9 @@ $(function () {
 //            2a
 //
 function solveQuadraticFormula(a, b, c, debug) {
+  if (a === 0) {
+    return solveLinearEquation(b, c);
+  }
   var D = discriminant(a, b, c);
   var hasImaginaryPart = false;
   if (D < 0) {
@@ -43,8 +47,6 @@ function solveQuadraticFormula(a, b, c, debug) {
   var left   = -b;
   var right  = getSqrt(D);
   var bottom = 2 * a;
-
-  if (debug) console.log(bottom, left, right);
 
   var gcd = getGCD3(bottom, left, right[0]);
   if (gcd !== 1 && gcd !== 0) {
@@ -119,6 +121,26 @@ function solveQuadraticFormula(a, b, c, debug) {
 //
 function discriminant(a, b, c) {
   return b * b - 4 * a * c;
+}
+
+//
+// Solves linear equation and returns mathjax format string.
+//
+//     ax + b = 0
+//     x = -b/a
+//
+function solveLinearEquation(a, b) {
+  if (a === 0) return "\\mathrm{N/A}";
+  var mathFormat = "";
+  var ans = rationalize(-b, a);
+  var ansFlag = (ans[0] == -1) ? "-" : "";
+  if (ans[2] === 1) {
+    mathFormat += ansFlag + ans[1];
+  } else {
+    mathFormat += ansFlag + "\\frac{" + ans[1] + "}{" + ans[2] + "}";
+  }
+
+  return mathFormat;
 }
 
 //
