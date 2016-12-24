@@ -188,10 +188,13 @@ function getFactors(number) {
   var factors = [];
 
   if (number === 0) return [];
-  if (number <= 1 && number >= -1) return [number];
   if (number < 0) {
     factors.push(-1);
     number *= -1;
+  }
+  if (number <= 1) {
+    factors.push(number);
+    return factors;
   }
 
   var a = 2;
