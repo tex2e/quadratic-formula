@@ -12,3 +12,13 @@
 .eqn-input {
   width: 100px;
 }
+@media screen and (max-width: 600px) {
+  .eqn-input {
+    width: 50px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .eqn-input {
+    width: 30px;
+  }
+}
