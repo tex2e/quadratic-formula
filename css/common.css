@@ -19,6 +19,11 @@
 }
 @media screen and (max-width: 400px) {
   .eqn-input {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .eqn-input {
     width: 30px;
   }
 }
