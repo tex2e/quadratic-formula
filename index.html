@@ -56,14 +56,16 @@
     </form>
     <div id="result">\[{}\]</div>
   </div>
+
   <hr>
+
   <div class="margin10">
     <p>二次方程式の解を計算して、平方根・分数・虚数の形で答えを表示する計算サイトです。</p>
-    <h3>よくある質問</h3>
-    <div class="QA">
-      <h4>(1) どうやって使うのですか。</h4>
+
+    <article>
+      <h3>1. 使い方</h3>
       <p>
-        フォームに数字を入力して「計算」ボタンを押すか「Enter」を押すと、二次方程式の解を求めます。
+        フォームに数字を入力して「計算」ボタンか「Enter」を押すと、二次方程式の解を求めます。
       </p>
       <p>
         例えば、\(a = 2, b = 3, c = -4\) を入力すると、
@@ -72,50 +74,64 @@
         \)
         という解が得られます。
       </p>
-    </div>
-    <div class="QA">
-      <h4>(2) 虚数解は計算できますか。</h4>
+    </article>
+
+    <article>
+      <h3>2. 計算ツールの補足</h3>
+      <ul>
+        <li>空白の場合は係数は \(1\) として計算します。</li>
+        <li>虚数解も計算できます。</li>
+        <li>\(a = 0\) のときは、一次方程式として計算します。</li>
+        <li>\(a = b = 0\) のときは、\(x = \mathrm{N/A}\)（Not Available）と表示します。</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>3. 二次方程式の解の公式</h3>
       <p>
-        はい。虚数解も計算できます。
-      </p>
-    </div>
-    <div class="QA">
-      <h4>(3) \(a = 0\) や \(a = b = 0\) のときはどうなりますか。</h4>
-      <p>
-        \(a = 0\) のときは、一次方程式として計算します。
-        \(a = b = 0\) のときは、\(x = \mathrm{N/A}\)（Not Available）と表示します。
-      </p>
-    </div>
-    <div class="QA">
-      <h4>(4) 二次方程式の解の公式とは。</h4>
-      <p>
-        二次方程式の解を求めるための公式（下の式）を二次方程式の解の公式と呼びます。
+        二次方程式 \(ax^2 + bx + c = 0\) の解は次の公式で求めることができます。
         \[
           x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
         \]
       </p>
-    </div>
-    <div class="QA">
-      <h4>(5) バグを見つけました。どこに報告すればいいですか。</h4>
+
+      <h4>3.1. 係数 \(b\) が偶数のとき</h4>
       <p>
-        <a href="https://twitter.com/tex2e">@tex2e</a>にリプライをください。
-        送るときは「二次方程式の解計算ツールのバグ報告」みたいな単語も含めてください。
-        褒めてもらえると、すごく喜びます。
+        二次方程式の係数 \(b\) が偶数のとき、\(b = 2b'\) とおくと、解の公式は次のようになります。これを使うと、計算が少し楽になります。
+        \[
+          x = \frac{-b' \pm \sqrt{b'^2 - ac}}{a}
+        \]
       </p>
+
+      <h4>3.2. 公式の導出</h4>
       <p>
+        解の公式は次の手順で導出することができます。
+        \[
+        \begin{align}
+          ax^2 + bx + c &= 0 \\
+          x^2 + \frac{b}{a}x + \frac{c}{a} &= 0 \\
+          \left(x + \frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 + \frac{c}{a} &= 0 \\
+          \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2}{4a^2} - \frac{c}{a} \\
+          \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2} \\
+          x + \frac{b}{2a} &= \pm \frac{\sqrt{b^2 - 4ac}}{2a} \\
+          x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        \end{align}
+        \]
+      </p>
+    </article>
+
+    <article>
+      <h3>4. 連絡先</h3>
+      <p>
+        <a href="https://twitter.com/tex2e">@tex2e</a>にDMください。
+        送るときは「二次方程式の解計算ツール」みたいな単語も含めてください。
+        褒めてもらえると、すごく喜びます。
         また、このプログラムは
         <a href="https://github.com/tex2e/quadratic-formula">Github</a>
         に上げているので、勇気のある方は Pull Request してください。大歓迎です。
       </p>
-    </div>
-    <div class="QA">
-      <h4></h4>
-      <p></p>
-    </div>
-    <div class="QA">
-      <h4></h4>
-      <p></p>
-    </div>
+    </article>
+
   </div>
 </body>
 </html>
